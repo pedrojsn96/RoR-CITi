@@ -1,8 +1,8 @@
 class User
 	attr_acessor :email,:name,:age,:college,:curso, :name_disciplina, :teacher_disciplina, :nota
-	def initialize(email,name,age,college,curso)
-		@email = email
+	def initialize(name,email,age,college,curso)
 		@name = name
+		@email = email
 		@age = age
 		@college = college
 		@curso = curso
