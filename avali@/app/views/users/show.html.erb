@@ -1,0 +1,51 @@
+<!-- Top content -->
+        <div class="top-content">        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>avali@</strong></h1>
+                            <div class="description">
+                            	<p>
+	                            	<strong>Esse site mostra os usuários! </strong>
+                            	</p>
+                            </div> 
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	<p>
+                        		<strong>Email:</strong>                     
+                        		<%= @user.email %>
+                        	</p>
+                        	<p>
+                        		<strong>Password:</strong>
+                        		<%= @user.password %>
+                        	</p>
+                        </div>
+                        <%= link_to "Welcome", controller: users_path %>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	
+                        </div>
+                    </div>                    
+                </div>
+            </div>            
+        </div>
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>Made by Pedro Neto</p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
