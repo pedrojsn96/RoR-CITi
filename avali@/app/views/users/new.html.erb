@@ -1,42 +1,105 @@
 <!-- Top content -->
-        <div class="top-content">        	
+        <div class="top-content">           
             <div class="inner-bg">
-                <div class="container">
-                	
+                <div class="container">                 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>avali@</strong></h1>
                             <div class="description">
-                            	<p>
-	                            	<strong>Esse site lista os usuários! </strong>
-                            	</p>
+                                <p>
+                                    <strong>Esse site está em construção! </strong>
+                                </p>
                             </div> 
                         </div>
                     </div>                    
                     <div class="row">
-                        <div class="col-sm-5">
-                        	<h2>Lista Usuários</h2>
-                            <table>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                </tr>
-                                <% @users.each do |user| %>
-                                <tr>
-                                    <td><%= user.email %></td>
-                                    <td><%= user.password %></td>
-                                </tr>
-                                <% end %>
-                            </table>
-                            <%= link_to "Novo Usuário", users_path %>
+                        <div class="col-sm-5">                          
+                            <div class="form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Faça seu login</h3>
+                                        <p>Entre com seu Email e sua Senha:</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <%= form_for :user, url: users_path do |f| %>
+                                        <p>
+                                            <%= f.label :email %><br>
+                                            <%= f.text_field :email %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :password %><br>
+                                            <%= f.text_field :password %>
+                                        </p>
+                                        <p>
+                                            <div class="btn"><%= f.submit "Entrar" %></div>
+                                        </p>
+                                    <% end %>
+
+                                </div>
+                            </div>  
+                            <%= link_to 'Listar Usuários', users_path %>                 
+                            <div class="social-login">
+                                <h3>...ou login com:</h3>
+                                <div class="social-login-buttons">
+                                    <a class="btn btn-link-2" href="#">
+                                        <i class="fa fa-facebook"></i> Facebook
+                                    </a>                                    
+                                </div>
+                            </div>                          
                         </div>
                         
                         <div class="col-sm-1 middle-border"></div>
                         <div class="col-sm-1"></div>
-                        	
+                            
                         <div class="col-sm-5">
-                        	
-                        	
+                            
+                            <div class="form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Cadastro</h3>
+                                        <p>Realize o seu cadastro</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <%= form_for :user, url: users_path do |f| %>
+                                        <p>
+                                            <%= f.label :name %><br>
+                                            <%= f.text_field :name %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :email %><br>
+                                            <%= f.text_field :email %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :idade %><br>
+                                            <%= f.text_field :idade %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :faculdade %><br>
+                                            <%= f.text_field :faculdade %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :curso %><br>
+                                            <%= f.text_field :curso %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :password %><br>
+                                            <%= f.text_field :password %>
+                                        </p>
+                                        <p>
+                                            <div class="btn"><%= f.submit "Cadastrar" %></div>
+                                        </p>
+                                        <% end %>                           
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>                    
                 </div>
@@ -44,13 +107,13 @@
         </div>
         <!-- Footer -->
         <footer>
-        	<div class="container">
-        		<div class="row">        			
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				<p>Made by Pedro Neto</p>
-        			</div>
-        			
-        		</div>
-        	</div>
+            <div class="container">
+                <div class="row">                   
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="footer-border"></div>
+                        <p>Made by Pedro Neto</p>
+                    </div>
+                    
+                </div>
+            </div>
         </footer>
