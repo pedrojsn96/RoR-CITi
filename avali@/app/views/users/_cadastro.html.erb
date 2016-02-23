@@ -57,11 +57,15 @@
                                             <%= f.text_field :curso %>
                                         </p>
                                         <p>
-                                            <%= f.label :password %><br>
+                                            <%= f.label :senha %><br>
                                             <%= f.password_field :password %>
                                         </p>
                                         <p>
-                                            <div class="btn"><%= f.submit "Cadastrar", class: 'btn'%></div>
+                                            <%= f.label :confirma_senha %><br>
+                                            <%= f.password_field :password_confirmation %>
+                                        </p>
+                                        <p>
+                                            <div class="actions"><%= f.submit "Cadastrar", class: 'btn'%></div>
                                         </p>
                                         <% end %>                           
                                 </div>

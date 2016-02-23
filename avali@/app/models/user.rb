@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_secure_password
 	validates :name, length: {maximum: 50} 
 	validates :password, presence: true, length: {minimum: 6}
 	VALID_EMAIL_FORMAT= /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i 

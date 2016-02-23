@@ -17,18 +17,23 @@
                         <div class="col-sm-5">
                         	<h2>Lista Usuários</h2>
                             <table>
-                                <tr>
-                                    <th>Email </th>
-                                    <th>Password</th>
-                                </tr>
-                                <% @users.each do |user| %>
-                                <tr>
-                                    <td><%= user.email %></td>
-                                    <td><%= user.password %></td>
-                                </tr>
-                                <% end %>
+                                <thead>
+                                    <tr>
+                                        <th>Nome </th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @users.each do |user| %>
+                                    <tr>
+                                        <td><%= user.name %></td>
+                                        <td><%= user.email %></td>
+                                        <td><%= link_to "Show", user %></td>
+                                    </tr>
+                                    <% end %>
+                                </tbody>
                             </table>
-                            <%= link_to "Novo Usuário", new_user_path %>
                         </div>
                         
                         <div class="col-sm-1 middle-border"></div>
