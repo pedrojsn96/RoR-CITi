@@ -4,12 +4,7 @@
                 <div class="container">                 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>avali@</strong></h1>
-                            <div class="description">
-                                <p>
-                                    <strong>Esse site está em construção! </strong>
-                                </p>
-                            </div> 
+                            <h1><strong>avali@</strong></h1>                            
                         </div>
                     </div>                    
                     <div class="row">
@@ -18,87 +13,31 @@
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3>Faça seu login</h3>
-                                        <p>Entre com seu Email e sua Senha:</p>
+                                        <p>Entre com Email e Senha:</p>
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-lock"></i>
                                     </div>
                                 </div>
                                 <div class="form-bottom">
-                                    <%= form_for :user, url: users_path do |f| %>
+                                    <%= form_for :user, url: users_path, class: 'login-form' do |f| %>
                                         <p>
                                             <%= f.label :email %><br>
                                             <%= f.text_field :email %>
                                         </p>
                                         <p>
                                             <%= f.label :password %><br>
-                                            <%= f.text_field :password %>
+                                            <%= f.password_field :password %>
                                         </p>
                                         <p>
-                                            <div class="btn"><%= f.submit "Entrar" %></div>
+                                            <div><%= f.submit "Entrar", class: 'btn' %></div>
                                         </p>
                                     <% end %>
                                 </div>
-                                <%= link_to 'Listar Usuários', users_path %>   
-                            </div>              
-                            <div class="social-login">
-                                <h3>...ou login com:</h3>
-                                <div class="social-login-buttons">
-                                    <a class="btn btn-link-2" href="#">
-                                        <i class="fa fa-facebook"></i> Facebook
-                                    </a>                                    
-                                </div>
-                            </div>                          
-                        </div>
-                        
-                        <div class="col-sm-1 middle-border"></div>
-                        <div class="col-sm-1"></div>
-                            
-                        <div class="col-sm-5">
-                            
-                            <div class="form-box">
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3>Cadastro</h3>
-                                        <p>Realize o seu cadastro</p>
-                                    </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-pencil"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <%= form_for :user, url: users_path do |f| %>
-                                        <p>
-                                            <%= f.label :name %><br>
-                                            <%= f.text_field :name %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :email %><br>
-                                            <%= f.text_field :email %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :idade %><br>
-                                            <%= f.text_field :idade %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :faculdade %><br>
-                                            <%= f.text_field :faculdade %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :curso %><br>
-                                            <%= f.text_field :curso %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :password %><br>
-                                            <%= f.text_field :password %>
-                                        </p>
-                                        <p>
-                                            <div class="btn"><%= f.submit "Cadastrar" %></div>
-                                        </p>
-                                        <% end %>                           
-                                </div>
                             </div>
-                            
+                            <div class="new_user">
+                                <p>Novo usuario? <%= link_to "Cadastre-se agora!", new_user_path %></p>
+                            </div>                         
                         </div>
                     </div>                    
                 </div>

@@ -4,17 +4,20 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		
+		@user = User.new
 	end
 
 	def create
 		@user = User.new(user_params)
-		
-		@user.save
-		redirect_to @user
+  		if @user.save
+  		    flash[:notice] =  "Usuário foi criado com sucesso" 
+  			redirect_to '/welcome/index'
+  		else 
+  			render action: :new
+  		end 
 	end
 	
-	def show
+	def show #Aqui é onde fica meu HOME
 		@user = User.find(params[:id])
 	end
 
@@ -22,6 +25,6 @@ class UsersController < ApplicationController
 	end
 	private
 	def user_params
-		params.require(:user).permit(:email, :password)
+		params.require(:user).permit(:email,:name,:idade,:faculdade,:curso,:password)
 	end
 end

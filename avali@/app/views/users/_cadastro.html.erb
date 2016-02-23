@@ -1,4 +1,4 @@
-<!-- Top content -->
+
         <div class="top-content">           
             <div class="inner-bg">
                 <div class="container">                 
@@ -11,8 +11,8 @@
                                 </p>
                             </div> 
                         </div>
-                    </div>                    
-                    <div class="row">
+                    </div>                
+                    <div class="row">                        
                         <div class="col-sm-5">                            
                             <div class="form-box">
                                 <div class="form-top">
@@ -25,9 +25,24 @@
                                     </div>
                                 </div>
                                 <div class="form-bottom">
+                                   <%= form_for @user do |f| %> 
+                                        <% if @user.errors.any? %> 
+                                        <div id="error_explanation"> 
+                                            <div class="alert-error"> 
+                                                O formulário contém <%= pluralize(@user.errors.count, "erro") %>. 
+                                            </div> 
+                                            <ul> 
+                                                <% @user.errors.full_messages.each do |msg| %>                                              
+                                                <li><%= msg %></li> 
+                                                <% end %> 
+                                            </ul> 
+                                        </div>
+                                        <% end %>
+                                    <% end %>
+                                    
                                     <%= form_for :user, url: users_path do |f| %>
                                         <p>
-                                            <%= f.label :name %><br>
+                                            <%= f.label :nome %><br>
                                             <%= f.text_field :name %>
                                         </p>
                                         <p>
@@ -48,15 +63,14 @@
                                         </p>
                                         <p>
                                             <%= f.label :password %><br>
-                                            <%= f.text_field :password %>
+                                            <%= f.password_field :password %>
                                         </p>
                                         <p>
-                                            <div class="btn"><%= f.submit "Cadastrar" %></div>
+                                            <div class="btn"><%= f.submit "Cadastrar", class: 'btn'%></div>
                                         </p>
                                         <% end %>                           
                                 </div>
-                            </div>
-                            
+                            </div>                            
                         </div>
                     </div>                    
                 </div>

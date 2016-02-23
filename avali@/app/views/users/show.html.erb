@@ -6,31 +6,17 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>avali@</strong></h1>
-                            <div class="description">
-                            	<p>
-	                            	<strong>Esse site mostra os usuários! </strong>
-                            	</p>
-                            </div> 
                         </div>
                     </div>                    
                     <div class="row">
-                        <div class="col-sm-5">
-                        	<p>
-                        		<strong>Email:</strong>                     
-                        		<%= @user.email %>
-                        	</p>
-                        	<p>
-                        		<strong>Password:</strong>
-                        		<%= @user.password %>
-                        	</p>
-                        </div>
-                        <%= link_to "Welcome",new_user_path %>
-                        
-                        <div class="col-sm-1 middle-border"></div>
-                        <div class="col-sm-1"></div>
-                        	
-                        <div class="col-sm-5">
-                        	
+                        <div class="col-sm-5">                        	
+                            
+                            <h3>Perfil de <%= @user.name %> </h3>
+                            <%= @user.email %> <br>
+                            <%= @user.faculdade %><br>
+                            <%= @user.curso %>
+        
+                        <div class="col-sm-5">                      	
                         	
                         </div>
                     </div>                    

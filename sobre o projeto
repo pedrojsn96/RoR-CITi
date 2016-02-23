@@ -1,0 +1,21 @@
+HOME
+
+Vai ser uma pagina com menu onde terá as opções:
+	- cadastrar disciplina
+	- avaliar disciplina (de 0 a 10)
+		- listar faculdades
+		- ao selecionar a faculdade listar os cursos
+		- ao selecionar os cursos listar as disciplinas
+		- ver disciplinas, seu respectivo professor e a nota média (Tabela) 
+		- ao selecionar a disciplina,  permite vê comentários anteriores e realizar um novo comentário 
+	
+
+
+OBSERVACAO
+Vê relação de Disciplina e professor
+	- um professor tem varias disciplinas (n pra n)
+	- uma disciplina tem 1 ou mais professores
+Ao cadastrar disciplina verificar se a mesma disciplina esta vinculada
+a algum professor. Se já estiver, só permitir inserção se o nome do professor
+for diferente do nome já existente no banco
+
