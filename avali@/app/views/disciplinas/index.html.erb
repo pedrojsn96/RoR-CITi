@@ -1,0 +1,26 @@
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	<h3>Lista das Disciplinas</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="active">
+                                        <th>#</th>
+                                        <th>Nome </th>
+                                        <th>Professor</th>
+                                        <th>Nota</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @disciplinas.each do |disciplina| %>
+                                    <tr>
+                                        <td><%= disciplina.id %></td>
+                                        <td><%= link_to disciplina.name, disciplina %></td>
+                                        <td><%= disciplina.name_prof %></td>
+                                        <td><%= disciplina.nota %></td> <!-- Na verdade aqui é para aparecer a média da avalição geral da disciplina -->
+                                    </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                            <p>Nova Disciplina? <%= link_to "Cadastre aqui!", new_disciplina_path %></p>
+                        </div>                       	
+                    </div>

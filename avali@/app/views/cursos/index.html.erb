@@ -1,4 +1,4 @@
-               	                    
+      	                    
                     <div class="row">
                         <div class="col-sm-5">
                         	<h3>Lista Cursos</h3>
@@ -8,14 +8,13 @@
                                         <th>#</th>
                                         <th>Nome </th>
                                         <th>Faculdade</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <% @cursos.each do |curso| %>
                                     <tr>
                                         <td><%= curso.id %></td>
-                                        <td><%= curso.name %></td>
+                                        <td><%= link_to curso.name, disciplinas_path %></td>
                                         <td><%= curso.faculdade %></td>
                                     </tr>
                                     <% end %>

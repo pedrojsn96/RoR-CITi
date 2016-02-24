@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'curso/new'
 
   resources :cursos
+  resources :disciplinas
 
   resources :users
   get 'sign_in' => 'sessions#new' 

@@ -1,6 +1,44 @@
-<h1> User Settings </h1>
-<%= render 'cadastro' %>
-<ul>
-	<li><%= link_to "Edit", edit_user_path(current_user) %></li>
-	<li><%= link_to "Delete", @user, method: :delete %></li>
-</ul>
+
+<div class="row">                        
+                        <div class="col-md-6 col-md-offset-3">                            
+                            <div class="form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Editar</h3>
+                                        <p>Mude sua senha ou exclua sua conta</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                   <%= form_for @user do |f| %> 
+                                        <% if @user.errors.any? %> 
+                                        <div id="error_explanation"> 
+                                            <div class="alert-error"> 
+                                                O formulário contém <%= pluralize(@user.errors.count, "erro") %>. 
+                                            </div> 
+                                            <ul> 
+                                                <% @user.errors.full_messages.each do |msg| %>                                              
+                                                <li><%= msg %></li> 
+                                                <% end %> 
+                                            </ul> 
+                                        </div>
+                                        <% end %>
+
+                                        <p>
+                                            <%= f.label :senha %><br>
+                                            <%= f.password_field :password %>
+                                        </p>
+                                        <p>
+                                            <%= f.label :confirma_senha %><br>
+                                            <%= f.password_field :password_confirmation %>
+                                        </p>
+                                        <p>
+                                            <div class="actions"><%= f.submit "Editar", class: 'btn'%></div>
+                                        </p>
+                                    <% end %>                           
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
