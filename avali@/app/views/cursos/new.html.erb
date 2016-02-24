@@ -4,22 +4,22 @@
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <h3>Cadastro</h3>
-                                        <p>Realize o seu cadastro</p>
+                                        <h3>Cadastre o curso</h3>
+                                        <p>Realize o cadastro</p>
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-pencil"></i>
                                     </div>
                                 </div>
                                 <div class="form-bottom">
-                                   <%= form_for @user do |f| %> 
-                                        <% if @user.errors.any? %> 
+                                   <%= form_for @curso do |f| %> 
+                                        <% if @curso.errors.any? %> 
                                         <div id="error_explanation"> 
                                             <div class="alert-error"> 
-                                                O formulário contém <%= pluralize(@user.errors.count, "erro") %>. 
+                                                O formulário contém <%= pluralize(@curso.errors.count, "erro") %>. 
                                             </div> 
                                             <ul> 
-                                                <% @user.errors.full_messages.each do |msg| %>                                              
+                                                <% @curso.errors.full_messages.each do |msg| %>                                              
                                                 <li><%= msg %></li> 
                                                 <% end %> 
                                             </ul> 
@@ -27,34 +27,14 @@
                                         <% end %>
                                     <% end %>
                                     
-                                    <%= form_for :user, url: users_path do |f| %>
+                                    <%= form_for :curso, url: cursos_path do |f| %>
                                         <p>
                                             <%= f.label :nome %><br>
                                             <%= f.text_field :name %>
                                         </p>
                                         <p>
-                                            <%= f.label :email %><br>
-                                            <%= f.text_field :email %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :idade %><br>
-                                            <%= f.text_field :idade %>
-                                        </p>
-                                        <p>
                                             <%= f.label :faculdade %><br>
                                             <%= f.text_field :faculdade %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :curso %><br>
-                                            <%= f.text_field :curso %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :senha %><br>
-                                            <%= f.password_field :password %>
-                                        </p>
-                                        <p>
-                                            <%= f.label :confirma_senha %><br>
-                                            <%= f.password_field :password_confirmation %>
                                         </p>
                                         <p>
                                             <div class="actions"><%= f.submit "Cadastrar", class: 'btn'%></div>

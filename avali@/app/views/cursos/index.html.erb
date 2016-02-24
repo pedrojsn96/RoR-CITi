@@ -12,15 +12,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% @users.each do |user| %>
+                                    <% @cursos.each do |curso| %>
                                     <tr>
-                                        <td><%= user.id %></td>
-                                        <td><%= user.curso %></td>
-                                        <td><%= user.faculdade %></td>
+                                        <td><%= curso.id %></td>
+                                        <td><%= curso.name %></td>
+                                        <td><%= curso.faculdade %></td>
                                     </tr>
                                     <% end %>
                                 </tbody>
                             </table>
+                            <p>Novo Curso? <%= link_to "Cadastre aqui!", new_curso_path %></p>
                         </div>                       	
                     </div>                    
         

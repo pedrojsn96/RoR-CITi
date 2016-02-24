@@ -1,37 +1,13 @@
-<!-- Top content -->
-        <div class="top-content">        	
-            <div class="inner-bg">
-                <div class="container">
-                	
+ <% if flash[:notice] %>
+    <div class="notice"><h4><%= flash[:notice] %></h4></div>
+  <% end %>                 
                     <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>avali@</strong></h1>
-                        </div>
-                    </div>                    
-                    <div class="row">
-                        <div class="col-sm-5">                        	
-                            
+                        <div class="col-sm-5">                    	
                             <h3>Perfil de <%= @user.name %> </h3>
-                            <%= @user.email %> <br>
-                            <%= @user.faculdade %><br>
-                            <%= @user.curso %>
-        
-                        <div class="col-sm-5">                      	
-                        	
-                        </div>
-                    </div>                    
-                </div>
-            </div>            
-        </div>
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">        			
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				<p>Made by Pedro Neto</p>
-        			</div>
-        			
-        		</div>
-        	</div>
-        </footer>
+                            <ul>
+                                <li><%= @user.email %></li>
+                                <li><%= @user.faculdade %></li>
+                                <li><%= @user.curso %></li>
+                            </ul>
+                        </div>                    
+                    </div>

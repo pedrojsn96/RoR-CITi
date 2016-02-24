@@ -1,20 +1,30 @@
-<header> 
-	<div> 
-		<nav> 
-			<ul> 
-				<% if logged_in? %> 
-					<li><%= link_to "Users", users_path %></li> 
-					<li> 
-						<ul> 
-							<li><%= link_to "Profile", current_user %></li> 
-							<li><%= link_to "Settings", edit_user_path(current_user) %></li> 
-							<li> <%= link_to "Log out", sign_out_path, method: "delete" %> </li> 
-						</ul> 
-					</li> 
-				<% else %> 
-					<li><%= link_to "Log in", root_path %></li> 
+          
+    <div class="inner-bg">
+        <div class="container">
+			<div class="row">
+     			<div class="col-sm-8 col-sm-offset-2 text">
+            		<h1>avali@</h1>                            
+     			</div>
+			</div>
+			<div>
+				<% if logged_in? %>
+					<header> 
+						<div> 
+							<nav class='navbar navbar-default'>
+								<div class="container-fuild">	 
+									<ul class='nav navbar-nav'> 
+											<li><%= link_to "Profile", current_user %></li>
+											<li><%= link_to "Cursos", cursos_path %></li>
+											<li><%= link_to "Sobre", current_user %></li> 
+											<li><%= link_to "Settings", edit_user_path(current_user) %></li> 
+											<li> <%= link_to "Log out", sign_out_path, method: "delete" %> </li>  
+									</ul>
+								</div> 
+							</nav> 
+						</div> 
+					</header>
 				<% end %> 
-			</ul> 
-		</nav> 
-	</div> 
-</header>
+			</div>
+		</div>
+	</div>
+
