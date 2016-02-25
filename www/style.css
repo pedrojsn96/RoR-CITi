@@ -1,4 +1,14 @@
 
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1f1f1f;
+}
+
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
