@@ -14,13 +14,13 @@
                                     <% @disciplinas.each do |disciplina| %>
                                     <tr>
                                         <td><%= disciplina.id %></td>
-                                        <td><%= link_to disciplina.name, disciplina %></td>
+                                        <td><%= link_to disciplina.name, curso_disciplinas_path %></td>
                                         <td><%= disciplina.name_prof %></td>
                                         <td><%= disciplina.nota %></td> <!-- Na verdade aqui é para aparecer a média da avalição geral da disciplina -->
                                     </tr>
                                     <% end %>
                                 </tbody>
                             </table>
-                            <p>Nova Disciplina? <%= link_to "Cadastre aqui!", new_disciplina_path %></p>
+                            <p>Nova Disciplina? <%= link_to "Cadastre aqui!", new_curso_disciplina_path %></p>
                         </div>                       	
                     </div>

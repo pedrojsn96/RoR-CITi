@@ -1,7 +1,8 @@
 class DisciplinasController < ApplicationController
   before_action :authorize, except: [:new, :create]
   def index
-  	@disciplinas = Disciplina.all
+    @curso = Curso.find(params[:curso_id])
+  	@disciplinas = @curso.disciplinas
   end
   def new
   	@disciplina = Disciplina.new
@@ -11,7 +12,8 @@ class DisciplinasController < ApplicationController
   end
   def create
 		user = current_user
-		@disciplina = Disciplina.new(user_params)
+    @curso = Curso.find(params[:curso_id])
+		@disciplina = @curso.disciplinas.create(user_params)
   		if @disciplina.save
   		    flash[:notice] =  "Disciplina cadastrada com sucesso" 
   			redirect_to user_path(user)

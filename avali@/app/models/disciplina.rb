@@ -1,4 +1,5 @@
 class Disciplina < ActiveRecord::Base
+	belongs_to :curso
 	validates :name, length: {maximum: 100}, uniqueness: {case_sensitive: false, message: "A Disciplina já possui cadastro!"}
 	validates :name_prof, presence: true
 	validates :nota, presence: true

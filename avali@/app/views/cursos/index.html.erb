@@ -14,7 +14,7 @@
                                     <% @cursos.each do |curso| %>
                                     <tr>
                                         <td><%= curso.id %></td>
-                                        <td><%= link_to curso.name, disciplinas_path %></td>
+                                        <td><%= link_to curso.name, curso_disciplinas_path(curso) %></td>
                                         <td><%= curso.faculdade %></td>
                                     </tr>
                                     <% end %>

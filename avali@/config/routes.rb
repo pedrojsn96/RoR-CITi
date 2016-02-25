@@ -2,8 +2,9 @@ Rails.application.routes.draw do
  
   get 'curso/new'
 
-  resources :cursos
-  resources :disciplinas
+  resources :cursos do
+    resources :disciplinas
+  end
 
   resources :users
   get 'sign_in' => 'sessions#new' 

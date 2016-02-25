@@ -12,22 +12,8 @@
                                     </div>
                                 </div>
                                 <div class="form-bottom">
-                                   <%= form_for @disciplina do |f| %> 
-                                        <% if @disciplina.errors.any? %> 
-                                        <div id="error_explanation"> 
-                                            <div class="alert-error"> 
-                                                O formulário contém <%= pluralize(@disciplina.errors.count, "erro") %>. 
-                                            </div> 
-                                            <ul> 
-                                                <% @disciplina.errors.full_messages.each do |msg| %>                                              
-                                                <li><%= msg %></li> 
-                                                <% end %> 
-                                            </ul> 
-                                        </div>
-                                        <% end %>
-                                    <% end %>
                                     
-                                    <%= form_for :disciplina, url: disciplinas_path do |f| %>
+                                    <%= form_for :disciplina, url: curso_disciplinas_path do |f| %>
                                         <p>
                                             <%= f.label :nome_da_disciplina %><br>
                                             <%= f.text_field :name %>
