@@ -1,13 +1,8 @@
  <% if flash[:notice] %>
     <div class="notice"><h4><%= flash[:notice] %></h4></div>
-  <% end %>                 
+  <% end %> 
                     <div class="row">
-                        <div class="col-sm-5">                    	
-                            <h3>Perfil de <%= @user.name %> </h3>
-                            <ul>
-                                <li><%= @user.email %></li>
-                                <li><%= @user.faculdade %></li>
-                                <li><%= @user.curso %></li>
-                            </ul>
-                        </div>                    
+                        <div class="jumbotron">
+                                <h1>Bem Vindo <%= @user.name %></h1>
+                        </div>                   
                     </div>
